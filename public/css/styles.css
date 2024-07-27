@@ -1,0 +1,90 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1d2b64, #f8cdd8);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Chessboard Container */
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 80vmin;
+    height: 80vmin;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+/* Chessboard Squares */
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Square Colors */
+.square.light {
+    background-color: #f0d9b5;
+}
+
+.square.dark {
+    background-color: #b58863;
+}
+
+/* Piece Styles */
+.piece {
+    font-size: 3rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+/* Draggable Piece Styles */
+.piece.draggable {
+    cursor: grabbing;
+}
+
+/* Dragging Piece Styles */
+.piece.dragging {
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+/* Board Flipped for Black Player */
+.flipped {
+    transform: rotate(180deg);
+}
+
+/* Add Animation on Drop */
+.square:active .piece {
+    transform: scale(1.2);
+}
+
+/* Hover Effect on Squares */
+.square:hover {
+    background-color: #d1b68c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chessboard {
+        width: 90vmin;
+        height: 90vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    .chessboard {
+        width: 95vmin;
+        height: 95vmin;
+    }
+}
